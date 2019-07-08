@@ -3,7 +3,7 @@
 	<button :on-press="insert" title="insert"></button>
 	<button :on-press="clear" title="clear"></button>
 	<ScrollView>
-	    <ReactComp
+	    <TodoItem
 	      class="text-container"
 	      v-for="(todo, index) in todos"
 	      :key="'' + index"
