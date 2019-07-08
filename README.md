@@ -38,7 +38,7 @@ When you want to see the correct behavior of the list, then just replace in the 
 	<button :on-press="insert" title="insert"></button>
 	<button :on-press="clear" title="clear"></button>
 	<ScrollView>
-	    <TodoItem
+	    <ReactComp
 	      class="text-container"
 	      v-for="(todo, index) in todos"
 	      :key="'' + index"
