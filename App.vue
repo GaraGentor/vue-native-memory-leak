@@ -3,7 +3,7 @@
 	<button :on-press="insert" title="insert"></button>
 	<button :on-press="clear" title="clear"></button>
 	<ScrollView>
-	    <TodoItem
+	    <ReactTestCompWithVueComponents
 	      class="text-container"
 	      v-for="(todo, index) in todos"
 	      :key="'' + index"
@@ -17,15 +17,18 @@
 import React, { Component } from 'react';
 import TodoItem from "./TodoItem";
 import ReactComp from "./ReactTestComp";
+import ReactTestCompWithVueComponents from "./ReactTestCompWithVueComponents";
+
 export default {
   components: { 
-    ReactComp,
     TodoItem,
+    ReactComp,
+    ReactTestCompWithVueComponents,
   },
   methods: {
   	insert() {
   		for (let i = 0; i <= 500; i++) {
-  			this.todos.push({ id: 1, text: "Learn JavaScriptttt" });
+  			this.todos.push({ id: i, text: "Learn JavaScriptttt" });
   		}
   	},
   	clear() {
