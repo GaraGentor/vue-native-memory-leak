@@ -15,6 +15,7 @@ To create some memory leaks just press on the button insert to fill up the list 
 If you make this many times, then the memory will not be released with vue native components and you should see in the Performance Monitor in XCode that the memory is stacking.
 When you want to see the correct behavior of the list, then just replace in the App.vue the TodoItem with the ReactComp in the Template section. All Memory is releasing after clearing the list.
 
+vue-component
 ```
 <template>
   <view class="container">
@@ -32,6 +33,7 @@ When you want to see the correct behavior of the list, then just replace in the 
 </template>
 ```
 
+react-component
 ```
 <template>
   <view class="container">
@@ -39,6 +41,24 @@ When you want to see the correct behavior of the list, then just replace in the 
 	<button :on-press="clear" title="clear"></button>
 	<ScrollView>
 	    <ReactComp
+	      class="text-container"
+	      v-for="(todo, index) in todos"
+	      :key="'' + index"
+	      :item="todo"
+	    />
+	</ScrollView>
+  </view>
+</template>
+```
+
+react-component with vue-components
+```
+<template>
+  <view class="container">
+	<button :on-press="insert" title="insert"></button>
+	<button :on-press="clear" title="clear"></button>
+	<ScrollView>
+	    <ReactTestCompWithVueComponents
 	      class="text-container"
 	      v-for="(todo, index) in todos"
 	      :key="'' + index"
